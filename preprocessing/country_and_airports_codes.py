@@ -268,6 +268,30 @@ def regroup_aircraft_type(o_type):
 
     else: return o_type
 
+def rename_regroup_airlines(df_train, df_test):
+    """Renaming airlines by Airline A, B, C... 
+    and creating a group of airlines of less then 80 flights per year
+    returns the corrected dataset """
+    airlines_list = df_train['airline'].value_counts().index
+    renaming_airlines = {}
+    for i,airline in enumerate(list(airlines_list)):
+        renaming_airlines[airline] = "Airline " + chr(ord('A')+i)
+    df_train['airline'] = df_train['airline'].replace( renaming_airlines)
+    airline_counts = df_train['airline'].value_counts()
+    small_airlines = airline_counts[airline_counts < 80].index
+    df_train['airline'] = df_train['airline'].replace(small_airlines, 'Airline_less80')
+
+    df_test['airline'] = df_test['airline'].replace( renaming_airlines)
+    airline_counts = df_test['airline'].value_counts()
+    small_airlines = airline_counts[airline_counts < 80].index
+    df_test['airline'] = df_test['airline'].replace(small_airlines, 'Airline_less80')
+
+
+
+    
+
+
+
 def test_lon_lat():
     
     """ 
