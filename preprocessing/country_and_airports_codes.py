@@ -232,6 +232,42 @@ def group_and_rename_countries(df_train, df_test):
     print("-"*100)
 
 
+
+def regroup_aircraft_type(o_type):
+    """Match original aicraft types with similar type (to reduce number of one-hot encoding variables)
+
+    Args:
+        o_type (str): original type of aicraft
+
+    Returns the new type of the aircraft, the closest one to it. The category XXXX corresponds to the category of singular aircrafts OR aircrafts 
+    not present in the training dataset ("aicraft_types" list).
+    """
+
+    aircraft_types = ['A20N' ,'A21N' ,'A310' ,'A319' ,'A320' ,'A321' ,'A332' ,'A333' ,'A343' ,'A359', 'AT76' 
+    ,'B38M' ,'B39M' ,'B737' ,'B738' ,'B739' ,'B752' ,'B763' ,'B772' ,'B773' ,'B77W' ,'B788' ,'B789' 
+    ,'BCS1' ,'BCS3' ,'C56X' ,'CRJ9' ,'E190' ,'E195' ,'E290'] #list of aircraft_types in the training dataset.
+
+    match o_type :
+        case 'BCS1': return 'BCS3'
+        case 'B737': return 'A320'
+        case 'A332': return 'A333'
+        case 'E190': return 'E195'
+        case 'B739': return 'B38M'
+        case 'A359': return 'B773'
+        case 'B763': return 'A332'
+        case 'B39M': return 'B38M'
+        case 'A343': return 'XXXX'
+        case 'B752': return 'XXXX'
+        case 'A310': return 'A21N'
+        case 'B773': return 'XXXX'
+        case 'C56X': return 'XXXX' # mais c un outlier bizarre
+        case 'E290': return 'E195'
+
+    if o_type not in aircraft_types:
+        return 'XXXX'
+
+    else: return o_type
+
 def test_lon_lat():
     
     """ 
