@@ -268,6 +268,10 @@ def regroup_aircraft_type(o_type):
 
     else: return o_type
 
+def group_and_rename_aircraft_types(train_df, test_df):
+    train_df['aircraft_type'] = (train_df['aircraft_type']).apply(regroup_aircraft_type)
+    test_df['aircraft_type'] = (test_df['aircraft_type']).apply(regroup_aircraft_type)
+
 def rename_regroup_airlines(df_train, df_test):
     """Renaming airlines by Airline A, B, C... 
     and creating a group of airlines of less then 80 flights per year

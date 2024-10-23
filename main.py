@@ -3,7 +3,7 @@ import pandas
 import pickle
 import os
 import sys
-from preprocessing.country_and_airports_codes import compute_lon_lat,group_and_rename_countries, group_and_rename_airports
+from preprocessing.country_and_airports_codes import compute_lon_lat,group_and_rename_countries, group_and_rename_airports, group_and_rename_aircraft_types
 from preprocessing.encoding import one_hot_encoding,string_to_value_count, string_to_int_hashing
 def main():
     ########################## DATA LOADING ########################
@@ -24,6 +24,7 @@ def main():
     compute_lon_lat(train_df, test_df) # computes lon, lat for each airport
     group_and_rename_countries(train_df, test_df) # simplify country_codes by group and rename countries
     group_and_rename_airports(train_df, test_df) # simplify airport codes by group and rename airport
+    group_and_rename_aircraft_types(train_df, test_df) #regroup less used airlines and create "XXXX" category for unknown ones.
 
     ########################## ENCODING #########################
 
