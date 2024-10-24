@@ -36,7 +36,7 @@ def main():
     print("Start of the encoding ! ")
     print("-"*100)
 
-    columns_to_ohe = [] # A changer
+    columns_to_ohe = ['aircraft_type'] # A changer
     one_hot_encoding(train_df, test_df, columns_to_ohe)
 
     columns_to_hash = [] # A changer
