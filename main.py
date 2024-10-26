@@ -23,11 +23,11 @@ def main():
     print("Start of the preprocessing ! ")
     print("-"*100)
 
+    add_localtime_to_train_and_test(train_df,test_df) #add localtime features (departures & arrival hours, day of years, weeks, month)
     compute_lon_lat(train_df, test_df) # computes lon, lat for each airport
     group_and_rename_countries(train_df, test_df) # simplify country_codes by group and rename countries
     group_and_rename_airports(train_df, test_df) # simplify airport codes by group and rename airport
     group_and_rename_aircraft_types(train_df, test_df) #regroup less used airlines and create "XXXX" category for unknown ones.
-    add_localtime_to_train_and_test(train_df,test_df) #add localtime features (departures & arrival hours, day of years, weeks, month)
 
 
     ########################## ENCODING #########################
@@ -37,7 +37,7 @@ def main():
     print("-"*100)
 
     columns_to_ohe = ['aircraft_type'] # A changer
-    one_hot_encoding(train_df, test_df, columns_to_ohe)
+    train_df, test_df = one_hot_encoding(train_df, test_df, columns_to_ohe)
 
     columns_to_hash = [] # A changer
     string_to_int_hashing(train_df, test_df, columns_to_hash)
