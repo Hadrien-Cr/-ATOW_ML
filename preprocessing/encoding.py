@@ -18,6 +18,8 @@ def one_hot_encoding(df_train, df_test, columns):
     print(f"Columns {columns} sucessfully one hot encoded !")
     print("-"*100)
 
+    return df_train, df_test
+
 
 def string_to_int_hashing(df_train, df_test, columns):
     '''
