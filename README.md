@@ -10,7 +10,7 @@ Open Sky Network: https://opensky-network.org.
 
 ```main.py``` contains all the code to run the models. We have built a pipeline that pre-processes and encodes the data, and then tunes the model parameters (XGBoost) to get the best possible results.
 
-Another way to run models is via the jupyter notebooks that will take the same form as ```main.py```.
+Another way to run models is via the jupyter notebooks that take the same form as ```main.py```.
 
 
 ## Requirements 
