@@ -2,7 +2,6 @@ import sklearn
 import pandas
 import pickle
 import os
-print(os.getcwd())
 import sys
 from preprocessing.country_and_airports_codes import compute_lon_lat,group_and_rename_countries, group_and_rename_airports, group_and_rename_aircraft_types
 from preprocessing.encoding import one_hot_encoding,string_to_value_count, string_to_int_hashing
