@@ -50,5 +50,6 @@ combinaison linaire pour reduire les rmse - optimisation pour le faire.
 
 Tuning - optimisation bayseienne sur chacun des modèles (fichier tuning) module hyperopt pour ça 
 
+Pour train : aller dans xgboost_aggregation 
 
 
