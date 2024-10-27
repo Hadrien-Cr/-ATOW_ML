@@ -14,8 +14,16 @@ Another way to run models is via the jupyter notebooks that will take the same f
 
 ## Requirements 
 
+You need to have python version > 3.10
+To install requirements please run : 
+
+```
+pip install -r requirements.txt
+```
+
 
 ## Data preprocessing 
+
 
 
 ## Algorithm choice and model selection 
