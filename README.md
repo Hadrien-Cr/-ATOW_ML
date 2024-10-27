@@ -51,9 +51,11 @@ To make the predictions, we have specified and trained three different XGboost m
     - `xgboost_agreggation_model_0.json` is trained on wtc = H,
     - `xgboost_agreggation_model_1.json` is trained on wtc = M,
  
-Bayesian optimization is applied for hyperparameter tuning to each model, using the Hyperopt module (see `tuning.ipynb` file in the notebooks folder)).
+Bayesian optimization is applied for hyperparameter tuning to each model, using the Hyperopt module (see `tuning.ipynb` file in the notebooks folder).
 
 We then combine them linearly to minimize RMSE. The weights are optimized for best performance (the optimal weights turn out to be 1/2 and 1/2).
+
+Feel free to reach out to us for any inquiry!
 
 
 
