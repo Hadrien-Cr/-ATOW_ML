@@ -100,7 +100,6 @@ def main():
     ############################# MODEL #############################
 
     models_list = load_model("models/xgboost_agregation")
-
     
     ########################## PREDICT AND SAVE #####################
 
