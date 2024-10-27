@@ -22,6 +22,7 @@ To install requirements please run :
 pip install -r requirements.txt
 ```
 
+⚠️ : to correctly run the code, you have to have the datasets (`challenge_set.csv` & `submission_set.csv`) stored locally in the `data` folder.
 
 ## Data preprocessing & encoding
 
@@ -50,7 +51,7 @@ We have specified and trained three different XGboost models :
 
 We then combine them linearly to minimize RMSE, optimized for best performance.
 
-Bayesian optimization was applied to each model using the Hyperopt module for hyperparameter tuning (see tuning file).
+Bayesian optimization was applied to each model using the Hyperopt module for hyperparameter tuning (see `tuning.py` file).
 
 
 
