@@ -34,4 +34,21 @@ We have chsoen to use hashing technique in order to convert data into fixed-size
 
 ## Algorithm choice and model selection 
 
+We have chosen to use xgboost model 
+Model parameters can be found in models/xgboost aggregation 
+
+Modeles 
+
+3 models xgboost - 1 spécialisé sur l'ensemble de la donnée 
+2 autres - un sur H et l'autre sur M -
+
+modele 0 sur H et modele 1 sur M 
+
+prediction sur tous le dataset sur les 3, 
+2 vecteurs de prediction reusltatnt des modeles  
+combinaison linaire pour reduire les rmse - optimisation pour le faire. 
+
+Tuning - optimisation bayseienne sur chacun des modèles (fichier tuning) module hyperopt pour ça 
+
+
 
