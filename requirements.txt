@@ -1,5 +1,6 @@
-pandas
-scikit-learn
-airportsdata 
-folium
-pytest
+airportsdata==20241001
+numpy==2.1.2
+pandas==2.2.3
+pytz==2024.1
+scikit_learn==1.5.2
+timezonefinder==6.5.4
