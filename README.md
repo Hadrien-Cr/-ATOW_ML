@@ -3,3 +3,10 @@ Team repo for ATOW ML challenge (team_zealous_watermelon).
 
 This work has been conducted the OpenSkyNetwork PRC Data challenge, to try and predict ATOW the best way possible.
 This work is being made available to anyone under the GNU General Public License v3, "giving legal permission to copy, distribute and/or modify it", as long as these freedoms are passed on.
+
+
+## Quick start
+
+```main.py``` contains all the code to run the models. We have built a pipeline that pre-processes and encodes the data, and then tunes the model parameters (XGBoost) to get the best possible results.
+
+Another way to run models is via the jupyter notebooks that will take the same form as ```main.py```.
