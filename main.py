@@ -85,11 +85,32 @@ def main():
     columns_to_hash = [] # A changer
     string_to_int_hashing(train_df, test_df, columns_to_hash)
 
-    columns_to_vc = ['country_code_ades', 'country_code_adep', 'adep', 'ades', 'airline'] # A changer
+    columns_to_vc = ['country_code_ades', 'country_code_adep', 'adep', 'ades', 'airline', "callsign"] # A changer
     string_to_value_count(train_df, test_df, columns_to_vc)
+
+    # drop unusefull column:
+    to_drop = ['flight_id','date','name_adep','name_ades','name_adep','actual_offblock_time','arrival_time','local_departure_time','local_arrival_time']
+    train_df = train_df.drop(columns= to_drop)
+    test_df = test_df.drop(columns= to_drop)
 
     ########################## DATA SPLITTING #######################
 
+    X = train_df.drop(columns=['tow'])
+    y = train_df['tow']
+
+    from sklearn.model_selection import train_test_split
+    from sklearn.metrics import root_mean_squared_error
+
+    X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=0)
+
+
+    print("Train shape: ", X_train.shape)
+    print("Test shape: ", X_test.shape)
+
+
+    print(y_test)
+
+    #display(X_train)
 
 
 
