@@ -14,7 +14,7 @@ Another way to run models is via the jupyter notebooks that take the same form a
 
 
 ## Requirements 
-Please make sure to put ```challenge_set.csv``` and ```submission_set.csv``` in data folder of the ATOW_ML directory. 
+⚠️ : Please make sure to put ```challenge_set.csv``` and ```submission_set.csv``` in the data folder of the ATOW_ML directory. 
 
 You need to have python version > 3.10
 To install requirements please run : 
@@ -22,8 +22,6 @@ To install requirements please run :
 ```
 pip install -r requirements.txt
 ```
-
-⚠️ : to correctly run the code, you have to have the datasets (`challenge_set.csv` & `submission_set.csv`) stored locally in the `data` folder.
 
 ## Data preprocessing & encoding
 
