@@ -27,7 +27,7 @@ pip install -r requirements.txt
 ## Data preprocessing & encoding
 
 ### Preprocessing 
-We have added several adjustment to the given dataset in order to prepare data for training of XGboost model: 
+We have added several adjustment to the original given dataset in order to prepare the data for training with XGBoost: 
 1. Converted timezone to local time and adding features such as day of the year, week, month to account for eventual seasonality in ```add_localtime_to_train_and_test```
 2. Computed longitude and latitude for each airport in ```compute_lon_lat```
 3. Simplified country_codes by group and rename countries in ```group_and_rename_countries```
@@ -42,16 +42,18 @@ We have chsoen to use hashing technique in order to convert data into fixed-size
 
 ## Algorithm choice and model selection 
 
-We have chosen to use XGboost model for prediction of tow. 
-Model parameters can be found in `"models/xgboost_aggregation.py"`
+We have chosen to use the model XGboost to predict the TOW. 
+Model parameters can be found in `models/xgboost_aggregation.py`.
 
-We have specified and trained three different XGboost models : 
-- One on the whole dataset
-- Two others on H or M wtc (xgboost_agreggation_model_0.json stands for wtc = H, xgboost_agreggation_model_1.json stands for wtc = M, xgboost_agreggation_model_2.json stands for the whole dataset)
+To make the predictions, we have specified and trained three different XGboost models : 
+- One on the whole dataset (`xgboost_agreggation_model_2.json`)
+- Two others on H or M wtc
+    - `xgboost_agreggation_model_0.json` is trained on wtc = H,
+    - `xgboost_agreggation_model_1.json` is trained on wtc = M,
+ 
+Bayesian optimization is applied for hyperparameter tuning to each model, using the Hyperopt module (see `tuning.ipynb` file in the notebooks folder)).
 
-We then combine them linearly to minimize RMSE, optimized for best performance.
-
-Bayesian optimization was applied to each model using the Hyperopt module for hyperparameter tuning (see `tuning.py` file).
+We then combine them linearly to minimize RMSE. The weights are optimized for best performance (the optimal weights turn out to be 1/2 and 1/2).
 
 
 
