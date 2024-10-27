@@ -30,7 +30,7 @@ pip install -r requirements.txt
 ### Encoding 
 
 We have chsoen to use hashing technique in order to convert data into fixed-size numerical values using a hash function (see 
-``` string_to_int_hasing``` function for details). 
+```string_to_int_hasing``` function for details). 
 
 ## Algorithm choice and model selection 
 
